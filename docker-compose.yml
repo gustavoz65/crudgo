@@ -1,4 +1,3 @@
-version: '3'
 services:
   postgres:
     image: "postgres"
@@ -20,3 +19,7 @@ services:
       - "54321:80"
     depends_on:
       - postgres
+
+volumes:
+  pgdata:
+    # Pode ficar vazio ou adicionar configurações específicas se necessário
