@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap");
+
+body {
+  background-image: url("../assets/image.png");
+}
+
+h1 {
+  font-family: "Alfa Slab One", cursive;
+  margin: 0 auto;
+  margin-top: 6%;
+  text-align: center;
+  font-size: 70px;
+}
+
+ul,
+li {
+  font-family: "josefin Slab", serif;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 40px;
+  list-style: none;
+}
