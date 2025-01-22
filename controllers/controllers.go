@@ -32,6 +32,11 @@ func CriarNovoAluno(c *gin.Context) {
 			"error": err.Error()})
 		return
 	}
+	if err := models.ValidaDadosDeAlunos(&aluno); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error()})
+		return
+	}
 	database.DB.Create(&aluno)
 	c.JSON(http.StatusOK, aluno)
 }
@@ -67,6 +72,11 @@ func DeletaAluno(c *gin.Context) {
 	if err := database.DB.First(&aluno, id).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"Not Found": "Aluno nao encontrado"})
+		return
+	}
+	if err := models.ValidaDadosDeAlunos(&aluno); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error()})
 		return
 	}
 }
@@ -115,4 +125,12 @@ func BuscaAlunoPorRg(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, aluno)
+}
+
+func ExibePagina(c *gin.Context) {
+	var alunos []models.Aluno
+	database.DB.Find(&alunos)
+	c.HTML(http.StatusOK, "index.html", gin.H{
+		"alunos": alunos,
+	})
 }
