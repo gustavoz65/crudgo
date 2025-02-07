@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap");
 
 body {
-  background-image: url("../assets/image.png");
+  background-color: crimson;
 }
 
 h1 {
@@ -12,8 +12,7 @@ h1 {
   font-size: 70px;
 }
 
-ul,
-li {
+h3 {
   font-family: "josefin Slab", serif;
   margin: 0 auto;
   text-align: center;

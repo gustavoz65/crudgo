@@ -21,3 +21,4 @@ func HandleRequests() {
 	r.NoRoute(controller.RotaNaoEncontrada)
 	r.Run()
 }
+   // requisição ==== endPoint =====  função que vai ser executada
